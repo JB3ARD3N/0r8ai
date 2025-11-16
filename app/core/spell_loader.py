@@ -43,11 +43,16 @@ def load_spell_file(path: Path) -> Dict:
 	"""Load a single YAML file and return its parsed contents (or {}).
 
 	`path` may be absolute or relative; if relative it is resolved relative to
-	the repository `spells/` directory.
+	the repository root. If the path includes 'spells/', it is used as-is.
 	"""
 	p = Path(path)
 	if not p.is_absolute():
-		p = _default_spells_dir() / p
+		# If path is already relative to repo root with spells/ prefix, use as-is
+		if p.parts and p.parts[0] == "spells":
+			p = Path(__file__).resolve().parents[2] / p
+		else:
+			# Otherwise, assume it's relative to spells/ directory
+			p = _default_spells_dir() / p
 
 	if not p.exists():
 		raise FileNotFoundError(f"Spell file not found: {p}")

@@ -1,0 +1,8 @@
+name: "Test Spell"
+description: "A simple test spell"
+steps:
+  - action: echo
+    message: "Hello from test spell!"
+  - action: set
+    variable: result
+    value: "success"
