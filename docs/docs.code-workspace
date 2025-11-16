@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../frontend"
+		},
+		{
+			"path": "../spells"
+		},
+		{
+			"path": "../venv"
+		},
+		{
+			"path": "../.git"
+		},
+		{
+			"path": "../app"
+		}
+	],
+	"settings": {}
+}

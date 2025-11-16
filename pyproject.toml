@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orb"
+version = "0.1.0"
+description = "A YAML-based spell execution framework"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PyYAML>=6.0",
+    "jsonschema>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=0.10.0",
+]
+
+[tool.setuptools]
+packages = ["app", "app.core", "app.agents", "app.orchestrator"]
+
+[project.scripts]
+orb = "app.main:main"

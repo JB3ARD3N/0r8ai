@@ -1,0 +1,5 @@
+PyYAML>=6.0
+jsonschema>=4.0.0
+
+[dev]
+build>=0.10.0
